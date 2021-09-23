@@ -1,12 +1,33 @@
 from enum import Enum
 
-"""class color(Enum):
+class Color(Enum):
 	red,w,h = 0,1,2
 
-print(color(0))
-print(color.red)
-print(color['red'])
+print(Color(0))
+print(Color.red)
+print(Color['red'])
+
+class Shake(Enum):
+    VANILLA = 7
+    CHOCOLATE = 4
+    COOKIES = 9
+    MINT = 3
+
+# we can loop over a enum obj
+for shake in Shake:
+    print(shake)
+
 """
+Enumeration members are hashable, so they can be used in dictionaries and sets:
+
+"""
+apples = {}
+apples[Color.red] = 'red delicious'
+apples[Color.w] = 'granny smith'
+apples == {Color.red: 'red delicious', Color.w: 'granny smith'}
+print("Hashable improvment" , [(apples[i], i )for i in apples])
+
+
 
 ##print(color[0])
 
@@ -21,7 +42,7 @@ def foo():
         a = 5
     print(a) # ok
 
-#print(foo())
+print(foo())
 
 
 a = 'global'
