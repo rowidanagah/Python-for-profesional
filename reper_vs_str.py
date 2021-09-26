@@ -1,3 +1,10 @@
+"""
+To Read 
+	https://stackoverflow.com/questions/1436703/what-is-the-difference-between-str-and-repr
+
+"""
+
+
 class Card(object):
 	"""docstring for ClassName"""
 	def __init__(self, suit, pips):
