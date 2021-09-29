@@ -48,7 +48,6 @@ html = '''<a href="some_url">next</a>
 '''
 
 soup = BeautifulSoup(html , 'html.parser')
-
 for a in soup.find_all('label'):
     print ("Found the URL:", a.next_sibling.strip())
 
