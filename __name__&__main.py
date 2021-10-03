@@ -1,7 +1,7 @@
 """
 __name__ :: used to check whether a file has been imported as a module or not 
 
-tp check whether the module is being run by itself
+to check whether the module is being run by itself
 """
 
 
@@ -20,4 +20,14 @@ def decorator_to_mul(func):
 def mutiplication(a,b):
 	return a * b
 
-print(mutiplication(3,4))
+##print(mutiplication(3,4))
+
+"""
+Test for __main__ is used to avoid unexpected code excution whither you are excute this note or 
+	you will import it as a module or write it in a library.
+"""
+
+
+if __name__ == '__main__':
+	print(mutiplication(3,4))
+
