@@ -16,11 +16,17 @@ class StoppableThread(threading.Thread):
     def __init__(self):
         super(StoppableThread, self).__init__()
         self._stop_event = threading.Event()
+
     def stop(self):
+
         self._stop_event.set()
 
     def join(self, *args, **kwargs):
         self.stop()
+        """
+        you should call stop() on the thread when you want it to exit, 
+        and wait for the thread to exit properly using join()
+        """
         super(StoppableThread,self).join(*args, **kwargs)
     
     def run():

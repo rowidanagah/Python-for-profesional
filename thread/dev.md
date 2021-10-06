@@ -22,8 +22,7 @@ It contains specific information in a Thread Control Block (TCB) such as :
 
 __Threading__  module provides a very simple and intuitive API for implementing multiple threads. *Thread* in this module encapsulates threads and provide an interface to workwith them.
 
-To create a new thread is by calling `threading.Thread` to make an instance and then tell it to `.start()`:
-
+To create a new thread is by calling `threading.Thread`
 
 
 ```python
@@ -37,8 +36,8 @@ f1 = Thread(target = foo)
 # the thread will never be excuted unless `start` is called
 f1.start()
 ```
-> Note Start will run and terminated. Calling `thread_name.start` again will cuase a 
-`RuntimeError`
+> Note Start will run and terminated. Calling `thread_name.start` again will cuase a `RuntimeError`
+
 
 
 
@@ -47,4 +46,9 @@ f1.start()
 
  [You can find the code on the following repository](https://github.com/Rowida46/Python-for-profesional/tree/main/thread), this repo is a chapter in a [Python for profesional Book repo](https://github.com/Rowida46/Python-for-profesional).
 
+## To Read:
+
+- [How to Kill a Thread](https://stackoverflow.com/questions/323972/is-there-any-way-to-kill-a-thread)
+
+- [StoppableThread & ch116.5](https://stackoverflow.com/questions/47912701/python-how-can-i-implement-a-stoppable-thread)
 

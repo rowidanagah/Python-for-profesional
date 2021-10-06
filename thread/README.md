@@ -69,15 +69,18 @@ f1.start()
 Multiple Threads programm mechanism will be the same as the above code example,
 firstly it's required to create thread objects, then call `.start()` for eachthread obj and use `.join()` to make each thread complete its task before excuting another thread.
 
-Multiple runs for a programm that contains Multiple Threads will produce different orderings, it depends on the OS and quit hard to predict the proper ordering or excuting the threads.However Python provide.
-
+Multiple runs for a programm that contains Multiple Threads will produce different orderings, it depends on the OS and quit hard to predict the proper ordering or excuting the threads.However Python provide a __handle for that,__ , not yet.
 
 ## How to kill a thread?
 
 Even though it's not recommended, just think about 
    - A thread holding a critical resource and it must close properly,  
    - A thread has created several other threads that must be killed as well.
-A proper way to kill a thread is to check on a regular interval to see if it is time for it to exit.[Code example]()
+
+A proper way to kill a thread is to check on a regular interval to see if it is time for it to exit. [Code example](https://github.com/Rowida46/Python-for-profesional/blob/main/thread/stopable.py)
+
+You should call `stop()` on the thread when you want it to exit, and wait for the thread to exit properly using `join()`.
+
 
 
 
@@ -88,3 +91,7 @@ A proper way to kill a thread is to check on a regular interval to see if it is 
 - [Python-threading Real Python](https://realpython.com/intro-to-python-threading/#what-is-a-thread)
 - [Notes on Thread and threading module in python DEV.io posted by me]()
 - [How to implement Python stack `To read`](https://realpython.com/how-to-implement-python-stack/)
+
+- [How to Kill a Thread](https://stackoverflow.com/questions/323972/is-there-any-way-to-kill-a-thread)
+
+- [StoppableThread & ch116.5](https://stackoverflow.com/questions/47912701/python-how-can-i-implement-a-stoppable-thread)
