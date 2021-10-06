@@ -12,6 +12,7 @@ A thread contains all this information in a Thread Control Block (TCB):
    - Thread’s register set: registers assigned to thread for computations.
    - Parent process Pointer: A pointer to the Process control block (PCB) of the process that the thread lives on.
 
+
 One process can have Multiple threads where:
 	- Each thread has its own __Register set__ and __loacal vals__.
 	- Shared __global variables__ (stored in heap) and the __program code__. 
@@ -35,7 +36,7 @@ One example would be interaction with a service hosted on another computer, such
 
 
 
-To create a new thread is by calling `threading.Thread`
+To create a new thread is by calling `threading.Thread`.
 
 ```python
 
@@ -44,8 +45,8 @@ from threading import Thread
 def foo():
 	print ("Hola Hola")
 
+"""
 
-""" 
 Syntax :: Thread(target , args), where :
 
 	- target: refere to the function to be run.
@@ -63,11 +64,12 @@ f1.start()
 
 
 
+## Working With Many Threads
 
+Multiple Threads programm mechanism will be the same as the above code example,
+firstly it's required to create thread objects, then call `.start()` for eachthread obj and use `.join()` to make each thread complete its task before excuting another thread.
 
-
-
-
+Multiple runs for a programm that contains Multiple Threads will produce different orderings, it depends on the OS and quit hard to predict the proper ordering or excuting the threads.However Python provide.
 
 
 
@@ -77,3 +79,4 @@ f1.start()
 - [Notes on threading DEV.io post](https://dev.to/samueleresca/notes-on-threading-1cnm)
 - [Python-threading Real Python](https://realpython.com/intro-to-python-threading/#what-is-a-thread)
 - [Notes on Thread and threading module in python DEV.io posted by me]()
+- [How to implement Python stack `To read`](https://realpython.com/how-to-implement-python-stack/)

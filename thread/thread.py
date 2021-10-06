@@ -17,6 +17,8 @@ f1 = Thread(target = foo)
 print(f1.start())
 
 
+
+
 """
 	Custom Thread : We must override the Thread class run function
 """
@@ -33,4 +35,6 @@ slp = Sleepy()
 slp.start()
 slp.join()
 print("Custom Thread ~!")
+
+
 
