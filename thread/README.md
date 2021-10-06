@@ -72,6 +72,14 @@ firstly it's required to create thread objects, then call `.start()` for eachthr
 Multiple runs for a programm that contains Multiple Threads will produce different orderings, it depends on the OS and quit hard to predict the proper ordering or excuting the threads.However Python provide.
 
 
+## How to kill a thread?
+
+Even though it's not recommended, just think about 
+   - A thread holding a critical resource and it must close properly,  
+   - A thread has created several other threads that must be killed as well.
+A proper way to kill a thread is to check on a regular interval to see if it is time for it to exit.[Code example]()
+
+
 
 ## Resources
 

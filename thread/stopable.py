@@ -1,6 +1,12 @@
 import threading
 import time
 
+
+"""
+Why not to kill a thread?
+    - the thread is holding a critical resource that must be closed properly
+    - the thread has created several other threads that must be killed as well.
+"""
 class StoppableThread(threading.Thread):
     """
     Thread class with a stop() method. The thread itself has to check
