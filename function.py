@@ -6,6 +6,7 @@ def f(*args):
 	'''
 	return a+b+c
 
+
 def concatenate(**kwargs):
 	"""
 	**kwargs works just like *args,
@@ -13,6 +14,7 @@ def concatenate(**kwargs):
 	"""
 	for i,v in kwargs.items():
 		return i,v
+
 a, b, c = 1,2,3
 l2 =[1,2,3]
 l1 = [a, b, c]
@@ -52,6 +54,7 @@ def closure_inc(x):
 		return x + y
 	return inc
 
+
 clouser = closure_inc(2)
 print(clouser(2))
 
@@ -66,6 +69,7 @@ functions that don't have any state that will affect the output
 """
 Partial Functions in ch 56
 """
+
 def f(a,b,c):
 	return a*100 + b*10 + c
 

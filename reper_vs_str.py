@@ -11,6 +11,7 @@ class Card(object):
 		self.suit = suit
 		self.pips = pips
 
+
 ace_of_spades = Card('Spades', 1)
 four_of_clubs = Card('Clubs', 4)
 six_of_hearts = Card('Hearts', 6)

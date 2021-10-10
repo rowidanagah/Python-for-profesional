@@ -2,7 +2,10 @@
 ch 92
 """
 
-#Simple Web Scarper to get jobs posted not more than a day ago with filtering option
+"""
+Simple Web Scarper to get jobs posted not more than a day ago
+ with filtering option
+"""
 from bs4 import BeautifulSoup
 import requests
 import time

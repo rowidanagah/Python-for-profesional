@@ -46,6 +46,7 @@ try :
 	os.makedirs('./Hola')
 except OSError as error : 
 	print('Already broken' , error) 
+
 ##os.chdir('Hola')
 """
 makedir vs makedirs in python
