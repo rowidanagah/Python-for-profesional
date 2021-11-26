@@ -1,9 +1,9 @@
 ## What is a Context Manager?
 
- It's an object, that is notified when a context starts and ends, of a class that implements the 2 magic methods `__enter__` and `__exit__` and any other methers if needed. 
+ It's an object, that is notified when a context starts and ends, of a class that implements the 2 magic methods `__enter__` and `__exit__` and any other methods if needed. 
 
   
-  __For example__: when a context manager ends, the object file is closed.  
+  __For example__: when a context manager ends, the object file is closed. 
   
 ```python
 with open('test_ch30.txt' , 'w+') as file:
@@ -12,7 +12,7 @@ with open('test_ch30.txt' , 'w+') as file:
  # the open file has automaticlly been clossed 
 ```
 
-  Context manager commenly used with reading and wrting files to assist in conserving system memory and improve resorce managment by ensuring that each process holds its resources while excuting.
+  Context manager is commonly used with reading and writing files to assist in conserving system memory and improve resource management by ensuring that each process holds its resources while executing.
 
   > Opening a file using `with` statement ensures that [File descriptor](https://www.computerhope.com/jargon/f/file-descriptor.htm) are closed automatically.
 
@@ -25,8 +25,8 @@ with open('test_ch30.txt' , 'w+') as file:
    call and performe the setup code required and needed for the 
    process yo be excuted, before the `with` statment.
 
-  2- 	When the `with` statments ends, the interpreter invokes the `__exit__` 
-   method .
+  2- 	When the `with` statments ends, the interpreter invokes the `__exit__` method .
+
 
 
 *Illustartion* :
@@ -59,3 +59,45 @@ with ContextManager() as e:
 	print("is a " , e)
 
 ```
+
+##  Multiple context managers
+```python
+
+with open('test_ch30.txt') as input_file, open('test_ch77.txt', 'w') as output_file:
+	# do something with both files.
+	# e.g. copy the contents of input_file into output_file
+	for line in input_file:
+		output_file.write(line + '\n')
+
+# It has the same effect as nesting context managers:
+with open('test_ch30.txt') as input_file:
+	with open('test_ch77.txt', 'w') as output_file:
+		for line in input_file:
+			output_file.write(line + '\n')
+
+```
+
+
+## Manage Resources
+
+```python 
+class File():
+	def __init__(self, filename, mode):
+		self.filename = filename
+		self.mode = mode
+	def __enter__(self):
+		self.open_file = open(self.filename, self.mode)
+		return self.open_file
+	def __exit__(self, *args):
+		self.open_file.close()
+
+
+for _ in range(10000):
+	with File('test_ch30.txt', 'w') as f:
+		f.write('foo')
+
+```
+
+## ManageFile class follow. 
+
+ManageFile class follow/adhere the context manager protocole and support the with statment [Code link](https://github.com/Rowida46/Python-for-profesional/blob/main/Playing_with_Folders/Context_Manager.py#L16)
