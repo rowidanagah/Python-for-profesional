@@ -98,13 +98,6 @@ data = {"cats": [{"name": "Tubbs", "color": "white"}, {"name": "Pepper", "color"
 datat_str = {"foo": "bar", "baz": []} ## same as  {u"foo": u"bar", u"baz": []}
 print(json.dumps(datat_str , indent = 2 ) )
 
-
-
-
-
-
-
-
 from itertools import islice
 
 print([i for i in islice(range(20),2 , 10)])
@@ -114,3 +107,6 @@ li = [2, 4, 5, 7, 8, 10, 20]
   
 # Slicing the list
 print(list(islice(li, 1, 6, 2)))
+
+
+print("Test rowida branch")
