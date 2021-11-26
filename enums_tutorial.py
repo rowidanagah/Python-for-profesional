@@ -1,4 +1,3 @@
-git status
 from enum import Enum
 
 class Color(Enum):
@@ -20,7 +19,6 @@ for shake in Shake:
 
 """
 Enumeration members are hashable, so they can be used in dictionaries and sets:
-
 """
 apples = {}
 apples[Color.red] = 'red delicious'
@@ -44,7 +42,6 @@ def foo():
     print(a) # ok
 
 print(foo())
-
 
 
 a = 'global'
@@ -94,10 +91,18 @@ data = {"cats": [{"name": "Tubbs", "color": "white"}, {"name": "Pepper", "color"
 
 ]}
 
-gi#print(json.dumps(data , indent = 2 ) )
+#print(json.dumps(data , indent = 2 ) )
+
 
 datat_str = {"foo": "bar", "baz": []} ## same as  {u"foo": u"bar", u"baz": []}
 print(json.dumps(datat_str , indent = 2 ) )
+
+
+
+
+
+
+
 
 from itertools import islice
 
@@ -108,5 +113,3 @@ li = [2, 4, 5, 7, 8, 10, 20]
   
 # Slicing the list
 print(list(islice(li, 1, 6, 2)))
-
-print("Rowida Branch")
