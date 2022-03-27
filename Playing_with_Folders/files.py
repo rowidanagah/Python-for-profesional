@@ -1,10 +1,13 @@
 import os 
+
+#os.mkdir("dana.py/tst")
+print( os.name)
 dir_path = os.path.dirname(os.path.realpath('__file__'))
-print(dir_path)
+print("dir_path",dir_path)
 
 for  root , foldr, file in os.walk(dir_path):
 	print(len(foldr) , root.split('\\')[-1] ,file)
-
+print("_____________________________________________-")
 
 
 with open('test_ch30.txt' , 'w+') as file:

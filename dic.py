@@ -5,6 +5,11 @@
 """
 x_sqr = {i :i**2 for i in range(3)}
 print('x_sqr',x_sqr , '\n' , "---------------------")
+x = [[1,2,3], 34]
+tmp = x.copy()
+print(tmp == x , tmp is x, x[0] is tmp[0])
+
+
 
 X = ['Rowida' , 'Dana' , 'Anas']
 x = dict(zip([i+1 for i in range(3)] , X))

@@ -14,7 +14,7 @@ class MultiIndexing:
 		if isinstance(item , (int , slice)):
 			return self.__class__(self.val[item]) 
 		else :
-			## raise ValueError('Cannot find the item in the slice')
+			##raise ValueError('Cannot find the item in the slice')
 			return [self.val[i] for i in item] 
 
 	def __setitem__(self , item , val):
@@ -29,6 +29,7 @@ class MultiIndexing:
 			self.val[item] = val
 		elif isinstance(item , slice):
 			raise ValueError('TypeError: can only assign an iterable')
+			#print([i for i in item])
 		else :
 			for it in item:
 				if isinstance(item , slice):
@@ -39,7 +40,7 @@ class MultiIndexing:
 		"""
 		We can del item weither it's an int, a slice `:3`
 		or list of indexes that cann't contain any slice within not [1,3,:3]
-		as we will sort this lst of indexws as del each elelment of them
+		as we will sort this lst of indexws to del each elelment of them
 		"""
 		if isinstance(item , int) or isinstance(item , slice):
 			del self.val[item]
@@ -56,11 +57,12 @@ class MultiIndexing:
 indx = MultiIndexing([i for i in range(1,9)])
 print(indx)
 print(indx[1,5,2,6,1])
-print(indx[1,5:,4]) ## Notice the slicing here
+print("Notice the slicing here" , indx[1,5:,4]) ## Notice the slicing here
 indx[3,6,4] = 6
 print(indx) ## Single item to be edited :: OK
 indx[0] = 10
 print(indx)
+#indx[2:4] = 5
 
 s = [i for i in range(1,5)]
 del indx[1,4,3] 
