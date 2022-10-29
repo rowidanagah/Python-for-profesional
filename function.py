@@ -15,12 +15,53 @@ def concatenate(**kwargs):
 	for i,v in kwargs.items():
 		return i,v
 
+def funct(a,b=10, *args, kw = {2: "Dana"}, **kwargs):
+	return args , b , a , kwargs
+def mutate(a, lst =[]):
+	"""
+	checkout the differance of commiting this condition
+	if lst :
+		lst = []
+	"""
+	lst.append(a)
+	return lst
+print(mutate(2))
+print(mutate(3))
+print(mutate(5))
+print(mutate(4))
+
+"""Section 33.6 argument passing and mutability 
+
+In python arguments are passed by assignments not like the other langages that is assigned by value/ref
+
+which means that mutable val's content would affected by the action of function,and immutable vals wouldn't
+
+note reasigning the parameter inside the function won't assign the argument
+"""
+def mutability(y):
+	y[0] = -1 
+	y.append(8)
+	## y = [1,2,3] Un/comment this line -> that explain the note above...
+	return y
+lst = [1,4,5]
+print(mutability(lst))
+print("lst is" , lst)
+
+
+def immutable(y):
+	y = 4
+	return y
+x = 10
+print(immutable(x))
+print(x)
+print(funct(2,[1,2,34], dic = {2:"Dana"}))
+
 a, b, c = 1,2,3
 l2 =[1,2,3]
 l1 = [a, b, c]
 
-X = ['Rowida' , 'Dana' , 'Anas']
-x = dict(zip( X , [i+1 for i in range(3)]))
+X = ['Rowida' , 'Dana' ]
+x = dict(zip( X , [i+1 for i in range(2)]))
 print(f(l1))
 print(f(a,b,c))
 print(x)
@@ -84,3 +125,13 @@ def fib(n):
 	if n < 2 :
 		return n 
 	return fib(n-1) + fib(n-2)
+
+
+x = [3,1,9]
+y = x
+x.append(5)
+print(x,y)
+x.sort()
+print(x,y)
+x = x + [5]
+print(x,y)

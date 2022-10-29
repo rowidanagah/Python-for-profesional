@@ -16,3 +16,6 @@ def foo():
 
 
 foo()
+
+import sys
+print(sys.argv)

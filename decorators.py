@@ -1,7 +1,9 @@
 
 """
 Decorator is as a software design pattern, as they alter the fuctionality of a function,
- method or class without editing thier source of coded
+ method or class without editing thier source of coded.
+
+ Decorator function extends the functionality of another function without explicitly modifying it.
 
 """
 
@@ -28,6 +30,8 @@ def hola():
 	print('Hola hola hola ,this function is no longer called')
 #hola() can't call this function as it will eraise an error 
 
+from operator import mul
+
 
 ## to multiply
 
@@ -39,7 +43,8 @@ def decorator_to_mul(func):
 
 @decorator_to_mul
 def mutiplication(a,b):
-	return a * b
+	print("dana")
+	return mul(3,2) # a*b
 
 print(mutiplication(3,4))
 
@@ -56,7 +61,26 @@ def dec(msg):
 
 @dec('Below the lid of ur life')
 def hola():
-	pass
+	return mul(2,3)
 
-hola()
+print(hola())
 
+def singleton(cls):
+	instance = [None]
+	def wrapper(*args, **kwargs):
+		if not instance[0] :
+			instance[0] = cls(*args, **kwargs)
+		return instance[0]
+	return wrapper
+
+@singleton
+class singletone_class(object):
+	"""docstring for singletone_class"""
+	x = 9
+	def __init__(self):
+		print("Not yet...!")
+		
+print(singletone_class().x)
+arr = [9,2,3]
+lst = map(lambda n: n ** 2 if n % 2 == 0 else None, arr)
+print(lst)

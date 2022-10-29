@@ -53,6 +53,7 @@ with open('test_ch30.txt') as input_file, open('test_ch77.txt', 'w') as output_f
 	for line in input_file:
 		output_file.write(line + '\n')
 
+
 # It has the same effect as nesting context managers:
 with open('test_ch30.txt') as input_file:
 	with open('test_ch77.txt', 'w') as output_file:
