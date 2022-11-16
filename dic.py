@@ -9,11 +9,13 @@ x = [[1,2,3], 34]
 tmp = x.copy()
 print(tmp == x , tmp is x, x[0] is tmp[0])
 
-
+print("x_sqr",x_sqr)
 
 X = ['Rowida' , 'Dana' , 'Anas']
 x = dict(zip([i+1 for i in range(3)] , X))
+
 print('x' , {i : x[i] for i in x if len(x[i]) >3})
+
 print('Sorted x based on items',sorted(x.items()))
 srt =  sorted(x.items())
 print({i:j for i,j in x.items() if len(j) > 3} ,'\n' , "-------create--------------")
@@ -27,14 +29,17 @@ reverse = {j:i for i,j in x.items()}
 print(reverse , '\n' , "--------Reverse-------------")
 
 
-
 """
  To Merge 2 dics
  ----------------------
 """
 
 merge_dic = {i:j for d in [x , x_sqr] for i,j in d.items()}
+
 print(merge_dic ,'\n' , "------Merge---------------" )
+
+print({**x_sqr, **x}  , "------Merge and swap---------------" )
+
 from collections import Counter
 cnt = Counter('oh shit here we go again')
 print(cnt)
