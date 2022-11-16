@@ -1,5 +1,5 @@
 ## To sum app steps of loading a table and display its 	recods
-1- create engine `create_engine`
+1- create engine _create_engine_
 
 `engine = db.create_engine("sqlite:///users.db")
 `
