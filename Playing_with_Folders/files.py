@@ -1,7 +1,8 @@
 import os 
 
 #os.mkdir("dana.py/tst")
-print( os.name)
+print("OS NAME IS " ,os.name)
+
 dir_path = os.path.dirname(os.path.realpath('__file__'))
 print("dir_path",dir_path)
 

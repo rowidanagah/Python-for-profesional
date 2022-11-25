@@ -6,8 +6,6 @@ https://builtin.com/data-science/python-sqlalchemy
 
 https://docs.python.org/3/library/sqlite3.html
 
-
-
 """
 
 import sqlalchemy as db
@@ -44,7 +42,8 @@ posts = db.Table("posts", metadata,
 metadata.create_all(engine)
 
 
-## Insert into tables ...
+""" Insert into tables ...
+"""
 
 UserRecords = users.insert().values([ 
 	{"first_name": "Bob", "last_name": "Jones", "email_address": "bjones@notrealemail.com"},
@@ -61,7 +60,7 @@ postRecords = posts.insert().values([
 
 ])
 
-""" ** for avoiding multiple inserting with the same ids
+""" For avoiding multiple inserting with the same ids
 
 connection.execute(postRecords)
 connection.execute(UserRecords)
